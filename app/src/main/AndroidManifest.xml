@@ -2,6 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.nibemi.controlrobot">
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,13 +20,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ControlRobot">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".ManualActivity"
             android:exported="false" />
         <activity
             android:name=".AutomaticoActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ConexionActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
