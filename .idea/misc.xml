@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/calol/AndroidStudioProjects/ControlRobot/app/src/main/res/layout/activity_automatico.xml" value="0.25" />
+        <entry key="..\:/Users/calol/AndroidStudioProjects/ControlRobot/app/src/main/res/layout/activity_conexion.xml" value="0.25" />
         <entry key="..\:/Users/calol/AndroidStudioProjects/ControlRobot/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/calol/AndroidStudioProjects/ControlRobot/app/src/main/res/layout/activity_manual.xml" value="0.25" />
+        <entry key="..\:/Users/calol/AndroidStudioProjects/ControlRobot/app/src/main/res/layout/dispositivos_encontrados.xml" value="0.25" />
       </map>
     </option>
   </component>
