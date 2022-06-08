@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     User user = new User();
     BluetoothControl bluetoothControl;
 
-    Button btn_automatico, btn_manual;
+    Button btn_automatico, btn_manual, btn_arriba, btn_abajo, btn_derecha, btn_izquierda, btn_salir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,15 +25,46 @@ public class MainActivity extends AppCompatActivity {
         btn_automatico = (Button) findViewById(R.id.btn_automatico);
         btn_manual = (Button) findViewById(R.id.btn_manual);
 
+        btn_arriba = (Button) findViewById(R.id.btn_arriba);
+        btn_abajo = (Button) findViewById(R.id.btn_abajo);
+        btn_izquierda = (Button) findViewById(R.id.btn_izquierda);
+        btn_derecha = (Button) findViewById(R.id.btn_derecha);
+
+        btn_salir = (Button)findViewById(R.id.btn_salir);
+
+        btn_arriba.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bluetoothControl.send(1);
+            }
+        });
+
+        btn_abajo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bluetoothControl.send(2);
+            }
+        });
+
+        btn_izquierda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bluetoothControl.send(3);
+            }
+        });
+
+        btn_derecha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bluetoothControl.send(4);
+            }
+        });
+
         btn_automatico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                String data = bluetoothControl.getRecibido();
-                Toast.makeText(getApplicationContext(), data, Toast.LENGTH_SHORT).show();
-//                finish();
-//                Intent intent = new Intent(getApplicationContext(), AutomaticoActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), AutomaticoActivity.class);
+                startActivity(intent);
 
             }
         });
@@ -41,11 +72,16 @@ public class MainActivity extends AppCompatActivity {
         btn_manual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int valor =  1;
-                bluetoothControl.send(valor);
-//                finish();
-//                Intent intent = new Intent(getApplicationContext(), ManualActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ManualActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_salir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bluetoothControl.cancel();
+                finish();
             }
         });
     }

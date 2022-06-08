@@ -4,6 +4,166 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
     tools:context=".AutomaticoActivity">
 
+    <Button
+        android:id="@+id/btn_arriba3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/teal_700"
+        android:text="ARRIBA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_porcentaje2" />
+
+    <Button
+        android:id="@+id/btn_izquierda3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:backgroundTint="@color/teal_700"
+        android:text="IZQ"
+        app:layout_constraintEnd_toStartOf="@+id/btn_arriba3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_arriba3" />
+
+    <Button
+        android:id="@+id/btn_abajo3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:backgroundTint="@color/teal_700"
+        android:text="ABAJO"
+        app:layout_constraintEnd_toStartOf="@+id/btn_derecha3"
+        app:layout_constraintStart_toEndOf="@+id/btn_izquierda3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_izquierda3" />
+
+    <Button
+        android:id="@+id/btn_derecha3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:backgroundTint="@color/teal_700"
+        android:text="DER"
+        app:layout_constraintStart_toEndOf="@+id/btn_arriba3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_arriba3" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Progreso del Trabajo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_distancia_semilla" />
+
+    <EditText
+        android:id="@+id/txt_porcentaje2"
+        android:layout_width="127dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/txt_carga2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 %"
+        android:textColor="@color/teal_700"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MODO AUTOMATICO"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Ingrese la cantidad de surcos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/txt_cantidad_surcos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Distancia de la Semilla"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_cantidad_surcos" />
+
+    <EditText
+        android:id="@+id/txt_distancia_semilla"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <EditText
+        android:id="@+id/txt_numero_semillas2"
+        android:layout_width="184dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Num de Semillas Sembradas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_distancia_semilla" />
+
+    <Button
+        android:id="@+id/btn_regresar2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="REGRESAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_iniciar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INICIAR"
+        app:layout_constraintBottom_toTopOf="@+id/btn_regresar2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_detener"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DETENER"
+        app:layout_constraintBottom_toTopOf="@+id/btn_regresar2"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

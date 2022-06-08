@@ -8,25 +8,6 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Establecer Conexión"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:enabled="false"
-        android:text="Desconectar Dispositivo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <Button
         android:id="@+id/btn_automatico"
         android:layout_width="0dp"
         android:layout_height="48dp"
@@ -40,24 +21,24 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="MANUAL"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_salir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btn_arriba"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/teal_700"
         android:text="ARRIBA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btn_abajo"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:backgroundTint="@color/teal_700"
@@ -65,26 +46,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_derecha" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btn_izquierda"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="30dp"
         android:backgroundTint="@color/teal_700"
         android:text="IZQ"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_arriba" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btn_derecha"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginEnd="30dp"
         android:backgroundTint="@color/teal_700"
         android:text="DER"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_arriba" />
+
+    <Button
+        android:id="@+id/btn_salir"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="cerrar aplicacion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
