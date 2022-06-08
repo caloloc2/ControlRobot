@@ -1,0 +1,20 @@
+# ControlRobot
+Control de Robot por Bluetooth
+
+Envio de valores
+ARRIBA = 1,
+ABAJO = 2,
+IZQUIERDA = 3,
+DERECHA = 4,
+
+ABRIR TOLVA = 5,
+CERRAR TOLVA = 6,
+INICIAR = 7,
+DETENER = 8,
+
+VALORES RECIBIDOS SEPARADOS POR "/"
+POR EJEMPLO "10/23/50"
+DONDE
+10 = CONTADOR,
+23 = CARGA,
+50 = PORCENTAJE
