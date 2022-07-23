@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -16,7 +18,7 @@ public class ManualActivity extends AppCompatActivity {
 
     User user = new User();
     BluetoothControl bluetoothControl;
-    Button btn_arriba, btn_abajo, btn_derecha, btn_izquierda;
+    ImageView btn_arriba, btn_abajo, btn_derecha, btn_izquierda;
     Button btn_abrir_tolva, btn_cerrar_tolva, btn_regresar;
     TextView txt_carga, txt_numero_semillas, txt_porcentaje;
     TimerLectura timerLectura;
@@ -28,10 +30,10 @@ public class ManualActivity extends AppCompatActivity {
 
         bluetoothControl = user.getBluetoothControl();
 
-        btn_arriba = (Button) findViewById(R.id.btn_arriba2);
-        btn_abajo = (Button) findViewById(R.id.btn_abajo2);
-        btn_derecha = (Button) findViewById(R.id.btn_derecha2);
-        btn_izquierda = (Button) findViewById(R.id.btn_izquierda2);
+        btn_arriba = (ImageView) findViewById(R.id.btn_arriba2);
+        btn_abajo = (ImageView) findViewById(R.id.btn_abajo2);
+        btn_derecha = (ImageView) findViewById(R.id.btn_derecha2);
+        btn_izquierda = (ImageView) findViewById(R.id.btn_izquierda2);
 
         btn_abrir_tolva = (Button) findViewById(R.id.btn_abrir_tolva);
         btn_cerrar_tolva = (Button) findViewById(R.id.btn_cerrar_tolva);
@@ -63,31 +65,91 @@ public class ManualActivity extends AppCompatActivity {
             }
         }, 1000, true);
 
-        btn_arriba.setOnClickListener(new View.OnClickListener() {
+//        btn_arriba.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                bluetoothControl.send(1);
+//            }
+//        });
+
+        btn_arriba.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                bluetoothControl.send(1);
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+//                Log.d("TEST", String.valueOf(motionEvent));
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    Log.d("TEST", "1");
+                    bluetoothControl.send(1);
+                } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                    Log.d("TEST", "0");
+                    bluetoothControl.send(0);
+                }
+                return true;
             }
         });
 
-        btn_abajo.setOnClickListener(new View.OnClickListener() {
+//        btn_abajo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                bluetoothControl.send(2);
+//            }
+//        });
+
+        btn_abajo.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                bluetoothControl.send(2);
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+//                Log.d("TEST", String.valueOf(motionEvent));
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    Log.d("TEST", "1");
+                    bluetoothControl.send(1);
+                } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                    Log.d("TEST", "0");
+                    bluetoothControl.send(0);
+                }
+                return true;
             }
         });
 
-        btn_izquierda.setOnClickListener(new View.OnClickListener() {
+//        btn_izquierda.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                bluetoothControl.send(3);
+//            }
+//        });
+
+        btn_izquierda.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                bluetoothControl.send(3);
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+//                Log.d("TEST", String.valueOf(motionEvent));
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    Log.d("TEST", "1");
+                    bluetoothControl.send(1);
+                } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                    Log.d("TEST", "0");
+                    bluetoothControl.send(0);
+                }
+                return true;
             }
         });
 
-        btn_derecha.setOnClickListener(new View.OnClickListener() {
+//        btn_derecha.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                bluetoothControl.send(4);
+//            }
+//        });
+
+        btn_derecha.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                bluetoothControl.send(4);
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+//                Log.d("TEST", String.valueOf(motionEvent));
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    Log.d("TEST", "1");
+                    bluetoothControl.send(1);
+                } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                    Log.d("TEST", "0");
+                    bluetoothControl.send(0);
+                }
+                return true;
             }
         });
 
@@ -108,6 +170,7 @@ public class ManualActivity extends AppCompatActivity {
         btn_regresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                bluetoothControl.send(9);
                 finish();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);

@@ -7,46 +7,6 @@
     android:padding="20dp"
     tools:context=".AutomaticoActivity">
 
-    <Button
-        android:id="@+id/btn_arriba3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="15dp"
-        android:backgroundTint="@color/teal_700"
-        android:text="ARRIBA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_porcentaje2" />
-
-    <Button
-        android:id="@+id/btn_izquierda3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:backgroundTint="@color/teal_700"
-        android:text="IZQ"
-        app:layout_constraintEnd_toStartOf="@+id/btn_arriba3"
-        app:layout_constraintTop_toBottomOf="@+id/btn_arriba3" />
-
-    <Button
-        android:id="@+id/btn_abajo3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:backgroundTint="@color/teal_700"
-        android:text="ABAJO"
-        app:layout_constraintEnd_toStartOf="@+id/btn_derecha3"
-        app:layout_constraintStart_toEndOf="@+id/btn_izquierda3"
-        app:layout_constraintTop_toBottomOf="@+id/btn_izquierda3" />
-
-    <Button
-        android:id="@+id/btn_derecha3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:backgroundTint="@color/teal_700"
-        android:text="DER"
-        app:layout_constraintStart_toEndOf="@+id/btn_arriba3"
-        app:layout_constraintTop_toBottomOf="@+id/btn_arriba3" />
-
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
@@ -166,4 +126,39 @@
         android:text="DETENER"
         app:layout_constraintBottom_toTopOf="@+id/btn_regresar2"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/btn_arriba3"
+        android:layout_width="102dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_numero_semillas2"
+        app:srcCompat="@drawable/triangulo_up" />
+
+    <ImageView
+        android:id="@+id/btn_izquierda3"
+        android:layout_width="102dp"
+        android:layout_height="102dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_arriba3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_arriba3"
+        app:srcCompat="@drawable/triangulo_left" />
+
+    <ImageView
+        android:id="@+id/btn_derecha3"
+        android:layout_width="102dp"
+        android:layout_height="102dp"
+        app:layout_constraintStart_toEndOf="@+id/btn_arriba3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_arriba3"
+        app:srcCompat="@drawable/triangulo_right" />
+
+    <ImageView
+        android:id="@+id/btn_abajo3"
+        android:layout_width="102dp"
+        android:layout_height="102dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_derecha3"
+        app:srcCompat="@drawable/triangulo_down" />
 </androidx.constraintlayout.widget.ConstraintLayout>

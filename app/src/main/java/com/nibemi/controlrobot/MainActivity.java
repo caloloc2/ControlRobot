@@ -63,10 +63,10 @@ public class MainActivity extends AppCompatActivity {
 //                Log.d("TEST", String.valueOf(motionEvent));
                 if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     Log.d("TEST", "1");
-//                    bluetoothControl.send(1);
+                    bluetoothControl.send(1);
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     Log.d("TEST", "0");
-//                    bluetoothControl.send(0);
+                    bluetoothControl.send(0);
                 }
                 return true;
             }
@@ -78,10 +78,10 @@ public class MainActivity extends AppCompatActivity {
 //                Log.d("TEST", String.valueOf(motionEvent));
                 if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     Log.d("TEST", "1");
-//                    bluetoothControl.send(1);
+                    bluetoothControl.send(1);
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     Log.d("TEST", "0");
-//                    bluetoothControl.send(0);
+                    bluetoothControl.send(0);
                 }
                 return true;
             }
@@ -93,10 +93,10 @@ public class MainActivity extends AppCompatActivity {
 //                Log.d("TEST", String.valueOf(motionEvent));
                 if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     Log.d("TEST", "1");
-//                    bluetoothControl.send(1);
+                    bluetoothControl.send(1);
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     Log.d("TEST", "0");
-//                    bluetoothControl.send(0);
+                    bluetoothControl.send(0);
                 }
                 return true;
             }
@@ -108,10 +108,10 @@ public class MainActivity extends AppCompatActivity {
 //                Log.d("TEST", String.valueOf(motionEvent));
                 if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     Log.d("TEST", "1");
-//                    bluetoothControl.send(1);
+                    bluetoothControl.send(1);
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     Log.d("TEST", "0");
-//                    bluetoothControl.send(0);
+                    bluetoothControl.send(0);
                 }
                 return true;
             }
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         btn_automatico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                bluetoothControl.send(5);
+                bluetoothControl.send(5);
                 Intent intent = new Intent(getApplicationContext(), AutomaticoActivity.class);
                 startActivity(intent);
 
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         btn_manual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                bluetoothControl.send(6);
+                bluetoothControl.send(6);
                 Intent intent = new Intent(getApplicationContext(), ManualActivity.class);
                 startActivity(intent);
             }
