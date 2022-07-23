@@ -11,6 +11,7 @@
         android:id="@+id/btn_automatico"
         android:layout_width="0dp"
         android:layout_height="48dp"
+        android:backgroundTint="#F26E50"
         android:text="AUTOMATICO"
         app:layout_constraintBottom_toTopOf="@+id/btn_manual"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,61 +21,63 @@
         android:id="@+id/btn_manual"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="#F26E50"
         android:text="MANUAL"
         app:layout_constraintBottom_toTopOf="@+id/btn_salir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_arriba"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
-        android:backgroundTint="@color/teal_700"
-        android:text="ARRIBA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_abajo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:backgroundTint="@color/teal_700"
-        android:text="ABAJO"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_derecha" />
-
-    <Button
-        android:id="@+id/btn_izquierda"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="30dp"
-        android:backgroundTint="@color/teal_700"
-        android:text="IZQ"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_arriba" />
-
-    <Button
-        android:id="@+id/btn_derecha"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="30dp"
-        android:backgroundTint="@color/teal_700"
-        android:text="DER"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_arriba" />
-
-    <Button
         android:id="@+id/btn_salir"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="#2EBBF2"
         android:text="cerrar aplicacion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/btn_arriba"
+        android:layout_width="102dp"
+        android:layout_height="102dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/triangulo_up" />
+
+    <ImageView
+        android:id="@+id/btn_izquierda"
+        android:layout_width="102dp"
+        android:layout_height="102dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_arriba"
+        app:layout_constraintTop_toBottomOf="@+id/btn_arriba"
+        app:srcCompat="@drawable/triangulo_left" />
+
+    <ImageView
+        android:id="@+id/btn_derecha"
+        android:layout_width="102dp"
+        android:layout_height="102dp"
+        app:layout_constraintStart_toEndOf="@+id/btn_arriba"
+        app:layout_constraintTop_toBottomOf="@+id/btn_arriba"
+        app:srcCompat="@drawable/triangulo_right" />
+
+    <ImageView
+        android:id="@+id/btn_abajo"
+        android:layout_width="102dp"
+        android:layout_height="102dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_derecha"
+        app:srcCompat="@drawable/triangulo_down" />
+
+    <SeekBar
+        android:id="@+id/progreso"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_abajo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

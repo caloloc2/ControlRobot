@@ -49,63 +49,66 @@ public class ConexionActivity extends AppCompatActivity {
         lista_dispositivos = (ListView) findViewById(R.id.list_dispositivos);
         lista_dispositivos.setAdapter(dispositivosEmparejados);
 
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+
 
         lista_dispositivos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String info = ((TextView) view).getText().toString();
-                String macAddress = info.substring(info.length() - 17);
-
-                Log.d(btlog, "Se seleccionó el dispositivo con MAC ADDRESS " + macAddress);
-                btDevice = btAdapter.getRemoteDevice(macAddress);
-
-                user.setBluetoothDevice(btDevice);
-                user.setContext(appContext);
-
-                bluetoothControl = new BluetoothControl(btDevice, appContext);
-                bluetoothControl.run();
-
-                user.setBluetoothControl(bluetoothControl);
-
-                boolean estado = bluetoothControl.isConnected();
-
-                if (estado){
-                    Toast.makeText(getApplicationContext(), "El dispositivo se encuentra conectado.", Toast.LENGTH_SHORT).show();
-                    finish();
+//                String info = ((TextView) view).getText().toString();
+//                String macAddress = info.substring(info.length() - 17);
+//
+//                Log.d(btlog, "Se seleccionó el dispositivo con MAC ADDRESS " + macAddress);
+//                btDevice = btAdapter.getRemoteDevice(macAddress);
+//
+//                user.setBluetoothDevice(btDevice);
+//                user.setContext(appContext);
+//
+//                bluetoothControl = new BluetoothControl(btDevice, appContext);
+//                bluetoothControl.run();
+//
+//                user.setBluetoothControl(bluetoothControl);
+//
+//                boolean estado = bluetoothControl.isConnected();
+//
+//                if (estado){
+//                    Toast.makeText(getApplicationContext(), "El dispositivo se encuentra conectado.", Toast.LENGTH_SHORT).show();
+//                    finish();
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
-                }else{
-                    Toast.makeText(getApplicationContext(), "No se ha podido conectar el dispositivo.", Toast.LENGTH_SHORT).show();
-                }
+//                }else{
+//                    Toast.makeText(getApplicationContext(), "No se ha podido conectar el dispositivo.", Toast.LENGTH_SHORT).show();
+//                }
 
             }
         });
 
 
-        btAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (btAdapter == null) {
-            Toast.makeText(getApplicationContext(), "No soporta el dispositivo", Toast.LENGTH_SHORT).show();
-        } else {
-            if (!btAdapter.isEnabled()) {
-                Log.d(btlog, "Módulo Bluetooth no habilitado");
-                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-            }else{
-                // esta habilitado y lista los dispositivos vinculados
-                Set<BluetoothDevice> pairedDevices = btAdapter.getBondedDevices();
-                Log.d(btlog, "Numero de dispositivos vinculados = "+String.valueOf(pairedDevices.size()));
-                if (pairedDevices.size() > 0) {
-                    // There are paired devices. Get the name and address of each paired device.
-                    for (BluetoothDevice device : pairedDevices) {
-                        String deviceName = device.getName();
-                        String deviceHardwareAddress = device.getAddress(); // MAC address
-
-                        Log.d(btlog, "Dispositivo = "+deviceName + " - MAC ADDRESS = " + deviceHardwareAddress);
-                        dispositivosEmparejados.add(deviceName + " \n" + deviceHardwareAddress);
-                    }
-                }
-            }
-        }
+//        btAdapter = BluetoothAdapter.getDefaultAdapter();
+//        if (btAdapter == null) {
+//            Toast.makeText(getApplicationContext(), "No soporta el dispositivo", Toast.LENGTH_SHORT).show();
+//        } else {
+//            if (!btAdapter.isEnabled()) {
+//                Log.d(btlog, "Módulo Bluetooth no habilitado");
+//                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+//                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+//            }else{
+//                // esta habilitado y lista los dispositivos vinculados
+//                Set<BluetoothDevice> pairedDevices = btAdapter.getBondedDevices();
+//                Log.d(btlog, "Numero de dispositivos vinculados = "+String.valueOf(pairedDevices.size()));
+//                if (pairedDevices.size() > 0) {
+//                    // There are paired devices. Get the name and address of each paired device.
+//                    for (BluetoothDevice device : pairedDevices) {
+//                        String deviceName = device.getName();
+//                        String deviceHardwareAddress = device.getAddress(); // MAC address
+//
+//                        Log.d(btlog, "Dispositivo = "+deviceName + " - MAC ADDRESS = " + deviceHardwareAddress);
+//                        dispositivosEmparejados.add(deviceName + " \n" + deviceHardwareAddress);
+//                    }
+//                }
+//            }
+//        }
     }
 
     @Override
