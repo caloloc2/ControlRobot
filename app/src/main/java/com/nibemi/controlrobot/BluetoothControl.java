@@ -152,4 +152,15 @@ public class BluetoothControl extends Thread {
 
         } catch (IOException e) {}
     }
+
+    public void sendString(String dato) {
+        //Si el socket está a null es que no hemos conectado
+        if (mmSocket == null)
+            return;
+        try {
+
+            mmSocket.getOutputStream().write(dato.toString().getBytes());
+
+        } catch (IOException e) {}
+    }
 }

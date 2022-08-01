@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         btn_salir = (Button)findViewById(R.id.btn_salir);
 
         progreso = (SeekBar)findViewById(R.id.progreso);
+//        progreso.setMax(10);
 
         progreso.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -120,7 +121,8 @@ public class MainActivity extends AppCompatActivity {
         btn_automatico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bluetoothControl.send(5);
+//                bluetoothControl.send(5);
+                bluetoothControl.sendString("10/25/15/125");
                 Intent intent = new Intent(getApplicationContext(), AutomaticoActivity.class);
                 startActivity(intent);
 
